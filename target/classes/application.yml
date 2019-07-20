@@ -1,0 +1,32 @@
+
+
+#配置springmvc内容
+#配置c3p0数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springsecurity?characterEncoding=utf8&useSSL=true
+    username: root
+    password: 123456
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    mode: HTML
+    cache: true
+    enabled: true
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
+
+#设置mybatis的mapper别名所在包
+mybatis:
+  type-aliases-package: com.smile.model
+  mapper-locations: classpath:mapper/*Mapper.xml
+# 设置 mapper 接口对应 XMl 配置文件的路径
+
+server:
+  port: 8080
+
